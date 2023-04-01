@@ -111,7 +111,7 @@ const plugin: FastifyPluginAsync<FastifyFormidableOptions> = async function (fas
   if (options.addContentTypeParser === true) {
     fastify.addContentTypeParser('multipart', async function (request: FastifyRequest, _payload: any) {
       request[kIsMultipart] = true
-      const parse = buildRequestParser(formidable)
+      const parse = buildRequestParser(buildIncomingForm(options.formidable))
       const { body, files } = await parse(request)
       request.files = files
       return body
