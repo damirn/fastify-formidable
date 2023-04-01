@@ -1,5 +1,5 @@
 {
-  "name": "fastify-formidable",
+  "name": "@damirn/fastify-formidable",
   "version": "3.0.3",
   "description": "",
   "main": "lib/index.js",
